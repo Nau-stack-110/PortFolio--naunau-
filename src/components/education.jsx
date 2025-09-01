@@ -210,17 +210,17 @@ function Card({ e, imageSrc }) {
     >
       {/* Image */}
       {imageSrc && !imgError ? (
-        <div className="relative">
+        <div className="relative aspect-[16/9] sm:aspect-[21/9] overflow-hidden">
           <img
             src={imageSrc}
             alt={`${e.school} logo`}
-            className="w-full h-40 object-cover"
+            className="w-full h-full object-contain"
             onError={() => setImgError(true)}
           />
           <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-indigo-600/10 via-transparent to-purple-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
         </div>
       ) : (
-        <div className="bg-gray-200 dark:bg-gray-700 border-2 border-dashed rounded-xl w-full h-40 flex items-center justify-center">
+        <div className="bg-gray-200 dark:bg-gray-700 border-2 border-dashed rounded-xl w-full aspect-[16/9] sm:aspect-[21/9] flex items-center justify-center">
           <span className="text-gray-500 dark:text-gray-400">
             {e.school}
           </span>

@@ -6,6 +6,7 @@ import Contact from "./components/contact";
 import Footer from "./components/footer";
 import About from "./components/about";
 import Skills from "./components/skills";
+import Interests from "./components/interests";
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
       <About/>
       <Education/>
       <Projects/>
+      <Interests/>
       <Contact/>
     </section> 
     </main> 

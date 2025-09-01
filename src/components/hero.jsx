@@ -5,7 +5,7 @@ import profile from "../assets/hero.png";
 
 export default function Hero() {
   const typing = useTypewriter({
-    words: ["Fullstack développeur", "Gameur", "Freelancer", "Etudiante en Informatique"],
+    words: ["Fullstack développeur", "Gameur", "Freelancer", "Etudiant en Informatique"],
     typingSpeed: 80,
     deletingSpeed: 40,
     pause: 1400,
@@ -67,7 +67,7 @@ export default function Hero() {
           </motion.h2>
 
           <p className="mt-4 text-gray-600 dark:text-gray-300 max-w-xl mx-auto md:mx-0 text-sm sm:text-base">
-            Développeur basé à Madagascar — je construis des applications web et jeux légers, performants et modernes.
+            Développeur basé à Madagascar — je construis des applications web, mobile et jeux légers, performants et modernes.
           </p>
 
           <div className="mt-6 flex justify-center md:justify-start gap-3 flex-wrap">

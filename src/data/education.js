@@ -4,28 +4,25 @@ import asja2 from "../assets/hero.png";
 
 
 export const education = [
-    {
-      school: "Université de Technologie de Madagascar",
-      degree: "Licence en Réseaux & Télécoms",
-      year: "2021 - 2024",
-      image: asja1,
-      details:
-        "Formation approfondie en infrastructure réseau, sécurité informatique, et gestion de systèmes distribués. Projets sur l'optimisation de la connectivité en zones rurales.",
-    },
-    {
-      school: "OpenRouter Academy",
-      degree: "Certificat en Configuration NAT & Isolation",
-      year: "2024",
-      image: asja,
-      details:
-        "Maîtrise des techniques avancées pour masquer les appareils connectés, avec mise en place de solutions orientées vie privée sur des hotspots communautaires.",
-    },
-    {
-      school: "Tenda Network Labs",
-      degree: "Workshop WISP & Hotspot Design",
-      year: "2023",
-      image: asja2,
-      details:
-        "Atelier technique axé sur la configuration des routeurs en mode relais, intégration avec Starlink, et déploiement de réseaux sécurisés à haut rendement.",
-    },
-  ];
+  {
+    degree: "Master I en Informatique",
+    school: "Université Athénée Saint Joseph Antsirabe (ASJA)",
+    year: "2025 - Présent",
+    image:asja1,
+    details: "Domaine : Génie Logiciel orienté innovation. Actuellement en poursuite d'études avancées en informatique, en se concentrant sur des pratiques d'ingénierie logicielle innovantes. Le programme à l'ASJA met l'accent sur les compétences pratiques, l'esprit entrepreneurial et l'intégration des besoins locaux pour préparer les étudiants au monde professionnel, en combinant science et sagesse pour un développement personnel et professionnel équilibré."
+  },
+  {
+    degree: "Licence Professionnelle en Développement d'Applications Informatiques",
+    school: "Université Athénée Saint Joseph Antsirabe (ASJA)",
+    year: "2022 - 2025",
+    image:asja,
+    details: "Diplômé avec Mention Bien. Acquisition de compétences pratiques en développement d'applications et solutions informatiques, dans un environnement professionnalisant favorisant la réactivité et l'innovation. L'ASJA, fondée en 2000, offre des formations adaptées aux exigences du marché du travail malgache."
+  },
+  {
+    degree: "Baccalauréat Général Scientifique",
+    school: "Lycée Privé FJKM Filadelfia Antsirabe",
+    year: "2022",
+    image:asja2,
+    details: "Diplômé avec Mention Bien. Bases solides en matières scientifiques, préparant à des études supérieures en technologie et informatique. Formation reçue dans un établissement privé associé à la FJKM, promouvant des valeurs éducatives et spirituelles."
+  }
+];
