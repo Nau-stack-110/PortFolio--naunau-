@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import useTypewriter from "../utils/useTypewriter";
 import { socials } from "../data/socials";
-import profile from "../assets/hero.png"; 
+import profile from "../assets/hero.jpg"; 
 
 export default function Hero() {
   const typing = useTypewriter({

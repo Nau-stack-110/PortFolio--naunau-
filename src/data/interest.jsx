@@ -22,7 +22,7 @@ export const interests = [
         <FaLaptopCode className="text-indigo-600 dark:text-indigo-400" />
         CodingGame :{" "}
         <a
-          href="https://www.codingame.com/"
+          href="https://www.codingame.com/profile/de892a6ff2abb051b3cdcb394aac93412915306"
           target="_blank"
           rel="noopener noreferrer"
           className="text-indigo-600 dark:text-indigo-400 hover:underline hover:text-indigo-700 dark:hover:text-indigo-300 transition-colors"
