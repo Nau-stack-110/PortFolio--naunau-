@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
+import emailjs from "emailjs-com";
 import { FiMail, FiUser, FiMessageSquare, FiSend } from "react-icons/fi";
 
 const containerVariants = {
@@ -43,10 +44,26 @@ export default function Contact() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Placeholder for form submission logic (e.g., send email via API)
-    console.log("Form submitted:", formData);
-    alert("Message envoyé !");
-    setFormData({ name: "", email: "", message: "" });
+
+    emailjs
+      .send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        {
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+        },
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      )
+      .then(() => {
+        alert("Message envoyé avec succès !");
+        setFormData({ name: "", email: "", message: "" });
+      })
+      .catch((error) => {
+        console.error("Erreur EmailJS :", error);
+        alert("Erreur lors de l’envoi du message.");
+      });
   };
 
   return (
