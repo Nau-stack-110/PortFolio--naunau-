@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import emailjs from "emailjs-com";
+import Swal from "sweetalert2";
 import { FiMail, FiUser, FiMessageSquare, FiSend } from "react-icons/fi";
 
 const containerVariants = {
@@ -45,24 +46,56 @@ export default function Contact() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    const serviceID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const templateID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+    // Vérification si clé manquante
+    if (!serviceID || !templateID || !publicKey) {
+      Swal.fire({
+        icon: "error",
+        title: "Configuration EmailJS manquante",
+        text: "Vérifiez vos variables .env sur Netlify.",
+        background: "#1e1e2f",
+        color: "#fff",
+        confirmButtonColor: "#ef4444",
+      });
+      return;
+    }
+
     emailjs
       .send(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        serviceID,
+        templateID,
         {
           name: formData.name,
           email: formData.email,
           message: formData.message,
         },
-        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+        publicKey
       )
       .then(() => {
-        alert("Message envoyé avec succès !");
+        Swal.fire({
+          icon: "success",
+          title: "Message envoyé 🎉",
+          text: "Merci ! Je vous répondrai très bientôt.",
+          background: "#1e1e2f",
+          color: "#fff",
+          confirmButtonColor: "#4f46e5",
+        });
+
         setFormData({ name: "", email: "", message: "" });
       })
       .catch((error) => {
         console.error("Erreur EmailJS :", error);
-        alert("Erreur lors de l’envoi du message.");
+        Swal.fire({
+          icon: "error",
+          title: "Erreur ❌",
+          text: "Une erreur est survenue. Merci de réessayer plus tard.",
+          background: "#1e1e2f",
+          color: "#fff",
+          confirmButtonColor: "#ef4444",
+        });
       });
   };
 
